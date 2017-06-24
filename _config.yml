@@ -1,0 +1,10 @@
+# Site settings
+title: Sign up to hear more!
+description: >
+  Tell us your name and email address, and we’ll keep you informed about
+  Liverpool Code Club and the Maker Difference programme.
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+host: 0.0.0.0 # zarino.co.uk/post/jekyll-local-network

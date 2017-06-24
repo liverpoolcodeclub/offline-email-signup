@@ -1,0 +1,48 @@
+---
+layout: default
+bodyclass: home
+---
+
+<form class="js-offline-form">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control js-default-empty" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control js-default-empty" name="email" required>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <fieldset class="form-group">
+                <legend>I’d like to hear about:</legend>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="list-code-club" value="true" class="js-default-checked" checked>
+                    <span class="custom-checkbox__checkbox"></span>
+                    <span>Liverpool Code Club</span>
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="list-maker-difference" value="true" class="js-default-checked" checked>
+                    <span class="custom-checkbox__checkbox"></span>
+                    <span>Maker Difference</span>
+                </label>
+            </fieldset>
+        </div>
+        <div class="col-sm-6">
+            <fieldset class="form-group">
+                <legend>I’m interested in:</legend>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="interest-kids" value="true" class="js-default-checked" checked>
+                    <span class="custom-checkbox__checkbox"></span>
+                    <span>My kid(s) attending</span>
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="interest-volunteer" value="true" class="js-default-unchecked">
+                    <span class="custom-checkbox__checkbox"></span>
+                    <span>Being a volunteer</span>
+                </label>
+            </fieldset>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign up</button>
+</form>

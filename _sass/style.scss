@@ -1,0 +1,152 @@
+@import "settings";
+
+@import "bootstrap";
+@import "font-awesome";
+
+html {
+    font-size: 16px;
+}
+
+body {
+    padding: 1em;
+    font-size: 1em;
+
+    @media (min-width: 30em) {
+        padding: 2em;
+        font-size: 1.2em;
+    }
+
+    @media (min-width: 45em) {
+        font-size: 1.5em;
+    }
+
+    @media (min-width: 60em) {
+        font-size: 2em;
+    }
+}
+
+.intro,
+form {
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+p {
+    margin-bottom: 0.75em;
+}
+
+.form-control,
+.btn {
+    font-size: 1em;
+    height: 2.25em;
+    padding: 0.375em 0.75em;
+    border-radius: 0.25em;
+    border-width: 0.1em;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+label {
+    margin-bottom: 0.3em;
+}
+
+legend {
+    color: $text-color;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 0;
+}
+
+.custom-checkbox {
+    display: block;
+    margin: 0.625em 0;
+    position: relative;
+    font-weight: normal;
+
+    input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+    }
+}
+
+.custom-checkbox__checkbox {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.1em solid #ccc;
+    border-radius: 0.25em;
+    background-color: #fff;
+    text-align: center;
+    float: left;
+    margin-right: 0.5em;
+
+    :checked + & {
+        &:before {
+            @extend .#{$fa-css-prefix};
+            content: $fa-var-check;
+            line-height: 1em;
+        }
+    }
+
+    :focus + & {
+        // A tweaked version of Bootstrap's `form-control-focus()` mixin
+        $color-rgba: rgba(red($input-border-focus), green($input-border-focus), blue($input-border-focus), 0.6);
+        border-color: $input-border-focus;
+        @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
+    }
+}
+
+.btn-primary {
+    min-width: 8em;
+}
+
+.btn-download {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: mix($color-codeclub-green, $color-codeclub-palegreen, 30%);
+    text-shadow: 0 1px 0 #fff;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: mix($color-codeclub-green, $color-codeclub-palegreen, 60%);
+    }
+
+    &:before {
+        @extend .#{$fa-css-prefix};
+        content: $fa-var-cloud-download;
+        margin-right: 0.3em;
+    }
+}
+
+.thankyou {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(#000, 0.8);
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+        @extend .#{$fa-css-prefix};
+        display: block;
+        content: $fa-var-check-circle;
+        margin-bottom: 0.5em;
+        font-size: 2em;
+    }
+}

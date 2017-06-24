@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  </head>
+  <body {% if page.bodyclass %}class="{{ page.bodyclass }}"{% endif %}>
+
+    <div class="intro">
+        <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+        <p>{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</p>
+    </div>
+
+    {{ content }}
+
+    <script src="{{ "/assets/js/jquery-1.11.3.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/assets/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/assets/js/store.modern.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+  </body>
+</html>
